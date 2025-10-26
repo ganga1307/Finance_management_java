@@ -1,10 +1,10 @@
 package com.expensetracker.models;
 
-public class Main {
+public class User {
     private String name;
     private String email;
     private double MonthlyBudjet;
-     public Main(String name,String email,double MonthlyBudjet){
+     public User(String name, String email, double MonthlyBudjet){
         this.name=name;
         this.email=email;
         this.MonthlyBudjet=MonthlyBudjet;
