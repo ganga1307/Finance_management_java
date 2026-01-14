@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExpenseManager {
-    private List<Expenses> expenses = new ArrayList<>();
+    private final List<Expenses> expenses = new ArrayList<>();
 
     public void addExpense(Expenses expense) {
         expenses.add(expense);
@@ -13,9 +13,7 @@ public class ExpenseManager {
 
     public double getTotalSpent() {
         double total = 0;
-        for (Expenses e : expenses) {
-            total += e.getAmount();
-        }
+        for (Expenses e : expenses) total += e.getAmount();
         return total;
     }
 

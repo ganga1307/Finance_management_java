@@ -3,9 +3,9 @@ package com.expensetracker;
 import com.expensetracker.models.Goals;
 import com.expensetracker.models.User;
 import com.expensetracker.models.Expenses;
-import com.expensetracker.models.Goals;
 import com.expensetracker.services.ExpenseManager;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -15,6 +15,7 @@ public class Main {
 
         System.out.println("==== SMART PERSONAL EXPENSE TRACKER ====");
         System.out.print("Enter your name: ");
+
         String name = sc.nextLine();
         System.out.print("Enter your email: ");
         String email = sc.nextLine();
@@ -26,7 +27,7 @@ public class Main {
 
         Goals goal = null; // optional goal
 
-        while (true) {
+
             System.out.println("\nMENU");
             System.out.println("1. Add Expense");
             System.out.println("2. Show Total Spent");
@@ -38,6 +39,7 @@ public class Main {
             System.out.print("Choose an option: ");
 
             int choice = (int) getValidDouble(sc);
+            while (true) {
 
             switch (choice) {
                 case 1:
@@ -45,6 +47,9 @@ public class Main {
                     String spendOn = sc.nextLine();
                     System.out.print("Enter amount spent: ");
                     double amount = getValidDouble(sc);
+                    System.out.print("Date:");
+                    LocalDate date=LocalDate.parse(sc.nextLine()
+                    );
                     manager.addExpense(new Expenses(spendOn, amount));
                     System.out.println(" Expense added successfully!");
                     break;

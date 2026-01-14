@@ -3,12 +3,11 @@ package com.expensetracker.models;
 public class Goals {
     private String goalName;
     private double targetAmount;
-    private double savedAmount;
+    private double savedAmount = 0;
 
     public Goals(String goalName, double targetAmount) {
         this.goalName = goalName;
         this.targetAmount = targetAmount;
-        this.savedAmount = 0;
     }
 
     public void addSavings(double amount) {
